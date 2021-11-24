@@ -1,10 +1,37 @@
 import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import axios from "axios"
+import styled from 'styled-components';
+import CadastroServicos from "./components/CadastroServicos/CadastroServicos";
 
-function App() {
-	return (
-        <AppContainer />
-	)
+
+
+export default class App extends React. Component {
+
+	
+	render (){
+
+    return (
+      <div>
+
+        <CadastroServicos/>
+
+        
+      </div>
+
+    )
+     
+
+
+	}
+
+
 }
 
-export default App
+
+
+
+
+
+
+
+
