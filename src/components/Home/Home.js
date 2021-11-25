@@ -14,9 +14,11 @@ export class Home extends Component{
                 <button className="buttonHome">Home</button>
                 <button className="buttonCarrinho">Carrinho</button>
               </div>
-              <div>
+              <div className="bodyContainer">
                   <h1> LabeNinjas </h1>
                   <h3> O talento certo no momento certo</h3>
+                  <button className="buttonBeNinja"> Quero ser um Ninja</button>
+                  <button className="buttonHireNinja">Contratar um Ninja</button>
               </div>
             </div>
         )

@@ -1,5 +1,4 @@
 .header{
-    position: fixed;
     background-color: gray;
     color: black;
     width: 100%;
@@ -8,12 +7,17 @@
     border: 1px solid black;
 }
 
+.footer{
+    background-color: gray;
+}
+
 .buttonHome{
     position: absolute;
     top:10px ;
     right: 89px;
     border: 1.5px solid black 
 }
+
 
 .buttonCarrinho{
     position: absolute;
