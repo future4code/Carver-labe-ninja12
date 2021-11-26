@@ -8,7 +8,7 @@ import {
 export default function ContratarServico() {
   return (
     <div>
-      <FilterContainer>
+      {/* <FilterContainer>
         <input type="text" placeholder="Valor Mínimo" />
         <input type="text" placeholder="Valor Máximo" />
         <input type="text" placeholder="Buscar por título ou descrição" />
@@ -19,7 +19,7 @@ export default function ContratarServico() {
           <option value="">Título</option>
           <option value="">Prazo</option>
         </select>
-      </FilterContainer>
+      </FilterContainer> */}
       <ServiceContainer>
         <CardContainer>
           <div className="title">Nome do serviço</div>
