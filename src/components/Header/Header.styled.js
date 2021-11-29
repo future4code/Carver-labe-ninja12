@@ -12,10 +12,16 @@ export const HeaderContainer = styled.header`
     flex-wrap: wrap;
   }
 
+  #ninja-logo {
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+
   & .logo {
     margin-left: 50px;
     text-transform: capitalize;
     letter-spacing: 2px;
+    margin-bottom: 5px;
   }
 
   & ul {
