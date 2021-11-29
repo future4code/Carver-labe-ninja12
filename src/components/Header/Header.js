@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 import { HeaderContainer } from "./Header.styled";
 import { Link } from "react-router-dom";
+
 export default class Header extends Component {
+  state = {
+    toggle: false,
+  };
+
+  menuToggle = () => {
+    this.setState({ toggle: !this.state.toggle });
+  };
+
   render() {
+    const { toggle } = this.state;
     return (
       <HeaderContainer>
-        <div className="menu">
-          <img src="assets/bars-solid.svg" alt="menu" width="20" />
+        <div className="menu" onClick={this.menuToggle}>
+          <img src="assets/bars-solid.svg" alt="menu" width="40" />
         </div>
 
         <div className="logo">
@@ -14,27 +24,29 @@ export default class Header extends Component {
             <Link to="/">LabeNinjas</Link>
           </h1>
         </div>
+
         <nav>
-          <ul>
+          <ul className={toggle ? "toggle" : ""}>
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/">Quero ser um ninja!</Link>
+              <Link to="/form-servicos">Quero ser um ninja!</Link>
             </li>
             <li>
-              <Link to="/">Contratar um ninja!</Link>
+              <Link to="/job">Contratar um ninja!</Link>
             </li>
-            <li className="close">
+            <li className="close" onClick={this.menuToggle}>
               <img src="assets/times-solid.svg" alt="close" width="20" />
             </li>
           </ul>
-          <div className="nav-cart">
-            <span>0</span>
-            <Link to="/cart">
-              <img src="assets/shopping-cart-solid.svg" alt="cart" width="20" />
-            </Link>
-          </div>
+          <button type="button" className="icon-button">
+            <span className="icon">
+              <img src="assets/shopping-cart-solid.svg" alt="cart" width="30" />
+            </span>
+            <span className="icon-button__badge">0</span>
+            <Link to="/cart"></Link>
+          </button>
         </nav>
       </HeaderContainer>
     );
