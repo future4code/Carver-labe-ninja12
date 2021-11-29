@@ -7,7 +7,7 @@ export default class ContratarServico extends Component {
   static contextType = DataContext;
   render() {
     const { jobs } = this.context;
-    console.log(jobs);
+
     return (
       <div>
         <FilterContainer>
