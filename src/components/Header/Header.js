@@ -21,7 +21,15 @@ export default class Header extends Component {
 
         <div className="logo">
           <h1>
-            <Link to="/">LabeNinjas</Link>
+            <Link to="/" className="link-logo">
+              <img
+                src="assets/ninja.png"
+                alt="ninja-logo"
+                width="40"
+                id="ninja-logo"
+              />
+              LabeNinjas
+            </Link>
           </h1>
         </div>
 
