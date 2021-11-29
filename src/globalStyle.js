@@ -5,6 +5,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     
   }
   
@@ -12,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
    /*  background: radial-gradient(#fff, #ffd6d6); */
   }
+
 `;
 
 export default GlobalStyle;
