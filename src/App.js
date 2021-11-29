@@ -14,6 +14,44 @@ import Footer from "./components/Footer/Footer";
 import CadastroServicos from "./pages/CadastroServicos/CadastroServicos";
 
 export default class App extends React.Component {
+  state = {
+    filtroMinimo: "",
+    filtroMaximo: "",
+    filtroBuscaPorNome: "",
+  };
+
+  manipularValorDoFiltroMinimo = (event) => {
+    this.setState({ filtroMinimo: event.target.value });
+  };
+  manipularValorDoFiltroMaximo = (event) => {
+    this.setState({ filtroMaximo: event.target.value });
+  };
+  manipularValorDoFiltrobuscaPorNome = (event) => {
+    this.setState({ filtrobuscaPorNome: event.target.value });
+  };
+  /* 
+  filtrarServicos = () => {
+    const servicoFiltradoMinimo = servicos.filter((servico) => {
+      if (this.state.filtroMinimo) {
+        return servico.price >= this.state.filtroMinimo;
+      }
+    });
+    const servicoFiltradoMaximo = servicoFiltradoMinimo.filter((servico) => {
+      if (this.state.filtroMaximo) {
+        return servico.price <= this.state.filtroMaximo;
+      } else {
+        return servico;
+      }
+    });
+
+    const servicosFiltradosCompletos = servicoFiltradoMaximo.filter(
+      (servico) => {
+        return servico.name.includes(this.state.filtroBuscaPorNome);
+      }
+    );
+    return servicosFiltradosCompletos;
+  }; */
+
   render() {
     return (
       <DataProvider>
