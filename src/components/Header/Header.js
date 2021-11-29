@@ -31,7 +31,7 @@ export default class Header extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/form-servicos">Quero ser um ninja!</Link>
+              <Link to="/cadastro-servicos">Quero ser um ninja!</Link>
             </li>
             <li>
               <Link to="/job">Contratar um ninja!</Link>

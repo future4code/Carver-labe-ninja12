@@ -4,7 +4,7 @@ export const HeaderContainer = styled.header`
   & {
     min-height: 70px;
     background: black;
-    color: #e056fd;
+    color: #7867bf;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
