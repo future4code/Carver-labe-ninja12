@@ -1,3 +1,3 @@
 # Labeninjas
 
-Link surge:  spooky-rose.surge.sh
+Link surge:  http://spooky-rose.surge.sh/
