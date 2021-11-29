@@ -1,3 +1,3 @@
 # Labeninjas
 
-Link surge:  https://aromatic-stitch.surge.sh/
+Link surge:  https://humorous-flame.surge.sh/
