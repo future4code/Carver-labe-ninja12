@@ -14,7 +14,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
    /*  background: radial-gradient(#fff, #ffd6d6); */
   }
-
+  .app{
+    min-height: calc(100vh - 34px);
+  }
 `;
 
 export default GlobalStyle;
