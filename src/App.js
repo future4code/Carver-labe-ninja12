@@ -1,18 +1,25 @@
 import React from "react";
-/* import axios from "axios";
-import styled from "styled-components"; */
+/* 
 /* import CadastroServicos from "./components/CadastroServicos/CadastroServicos"; */
+// import ContratarServico from "./pages/ContratarServico/ContratarServico";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { DataProvider } from "./components/Context/Context";
+import Header from "./components/Header/Header";
+//  import Section from "./components/Section/Section";
+
 import ContratarServico from "./pages/ContratarServico/ContratarServico";
-import Filtros from "./componentes-filtros/Filtros";
-// import { Servicos } from "./Servicos";
+import Detalhes from "./components/Detalhes/Detalhes";
+import MainHome from "./pages/Home/Home";
+import Footer from "./components/Footer/Footer";
+import CadastroServicos from "./pages/CadastroServicos/CadastroServicos";
 
 export default class App extends React.Component {
   state = {
     filtroMinimo: "",
     filtroMaximo: "",
-    filtroBuscaPorNome: ""
+    filtroBuscaPorNome: "",
   };
-  
+
   manipularValorDoFiltroMinimo = (event) => {
     this.setState({ filtroMinimo: event.target.value });
   };
@@ -22,11 +29,9 @@ export default class App extends React.Component {
   manipularValorDoFiltrobuscaPorNome = (event) => {
     this.setState({ filtrobuscaPorNome: event.target.value });
   };
-
+  /* 
   filtrarServicos = () => {
- 
-  
-    const servicoFiltradoMinimo = Servicos.filter((servico) => {
+    const servicoFiltradoMinimo = servicos.filter((servico) => {
       if (this.state.filtroMinimo) {
         return servico.price >= this.state.filtroMinimo;
       }
@@ -45,32 +50,28 @@ export default class App extends React.Component {
       }
     );
     return servicosFiltradosCompletos;
-  };
+  }; */
 
   render() {
-   
-    // const servicosFiltrados = this.filtrarServicos();
-    // console.log(servicosFiltrados);
-   
     return (
-      <div>
-   
-   <Filtros
-    minimo={this.state.filtroMinimo}
-    maximo={this.state.filtroMaximo}
-    buscaPorNome={this.state.filtroBuscaPorNome}
-    
-    onChangeMinimo={this.manipularValorDoFiltroMinimo}
-    onChangeMaximo={this.manipularValorDoFiltroMaximo}
-    onChangeMinimo={this.manipularValorDoFiltrobuscaPorNome}/>
-   
-   
-   
-      <ContratarServico />
-
-
-      </div>
-    )
-
+      <DataProvider>
+        <div className="app">
+          <Router>
+            <Header />
+            <Routes>
+              <Route path="/" exact element={<MainHome />} />
+              <Route
+                path="/cadastro-servicos"
+                element={<CadastroServicos />}
+                exact
+              />
+              <Route path="/job" element={<ContratarServico />} exact />
+              <Route path="/job/:id" element={<Detalhes />} />
+            </Routes>
+          </Router>
+        </div>
+        <Footer />
+      </DataProvider>
+    );
   }
 }
