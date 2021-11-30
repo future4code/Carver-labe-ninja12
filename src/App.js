@@ -5,13 +5,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DataProvider } from "./components/Context/Context";
 import Header from "./components/Header/Header";
-//  import Section from "./components/Section/Section";
-
 import ContratarServico from "./pages/ContratarServico/ContratarServico";
 import Detalhes from "./components/Detalhes/Detalhes";
 import MainHome from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
 import CadastroServicos from "./pages/CadastroServicos/CadastroServicos";
+import Cart from "./components/Cart/Cart";
 
 export default class App extends React.Component {
   state = {
@@ -67,6 +66,7 @@ export default class App extends React.Component {
               />
               <Route path="/job" element={<ContratarServico />} exact />
               <Route path="/job/:id" element={<Detalhes />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </Router>
         </div>
