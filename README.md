@@ -1,3 +1,3 @@
 # Labeninjas
 
-Link surge:  https://humorous-flame.surge.sh/
+Link surge:  http://sedate-flavor.surge.sh/
