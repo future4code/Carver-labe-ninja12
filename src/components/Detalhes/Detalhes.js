@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { ContainerDetalhes, DetalhesContainer } from "./Detalhes.styled";
 import axios from "axios";
 import serviceImg from "../../img/service_img.jpg";
 import { Link } from "react-router-dom";
+import { DataContext } from "../Context/Context";
+
 export default function Detalhes() {
   const { id } = useParams();
+  const context = useContext(DataContext);
+
   const [jobItem, setJob] = useState({
     id: "",
     title: "",
@@ -28,6 +32,8 @@ export default function Detalhes() {
       });
   }, [id, jobItem]);
 
+  const { addToCart } = context;
+
   return (
     <ContainerDetalhes>
       <DetalhesContainer>
@@ -39,7 +45,12 @@ export default function Detalhes() {
           </div>
           <p>{jobItem.description}</p>
           <p>{jobItem.dueDate}</p>
-          <Link to="/cart" className="cart">
+
+          <Link
+            to="/cart"
+            className="cart"
+            onClick={() => addToCart(jobItem.id)}
+          >
             Adicionar ao carrinho
           </Link>
         </div>

@@ -29,6 +29,7 @@ export default class ContratarServico extends Component {
                 key={job.id}
                 imageServico="assets/service_img.jpg"
                 {...job}
+                addToCartContext={this.context.addToCart}
               />
             );
           })}

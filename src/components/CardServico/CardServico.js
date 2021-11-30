@@ -17,7 +17,12 @@ export default function CardServico(props) {
         <span className="span-block"> {props.dueDate}</span>
       </div>
       <div className="btn">
-        <button className="button-card">Adicionar ao carrinho</button>
+        <button
+          className="button-card"
+          onClick={() => props.addToCartContext(props.id)}
+        >
+          Adicionar ao carrinho
+        </button>
 
         <button className="button-card">
           <Link to={props.id}>Ver Detalhes</Link>

@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { HeaderContainer } from "./Header.styled";
 import { Link } from "react-router-dom";
+import { DataContext } from "../Context/Context";
 
 export default class Header extends Component {
+  static contextType = DataContext;
+
   state = {
     toggle: false,
   };
@@ -13,6 +16,7 @@ export default class Header extends Component {
 
   render() {
     const { toggle } = this.state;
+    const { cart } = this.context;
     return (
       <HeaderContainer>
         <div className="menu" onClick={this.menuToggle}>
@@ -49,11 +53,11 @@ export default class Header extends Component {
             </li>
           </ul>
           <button type="button" className="icon-button">
-            <span className="icon">
+            <span className="icon"></span>
+            <Link to="/cart">
               <img src="assets/shopping-cart-solid.svg" alt="cart" width="30" />
-            </span>
-            <span className="icon-button__badge">0</span>
-            <Link to="/cart"></Link>
+            </Link>
+            <span className="icon-button__badge">{cart.length}</span>
           </button>
         </nav>
       </HeaderContainer>
